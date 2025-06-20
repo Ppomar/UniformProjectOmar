@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UniformProjectOmar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbaf10a4bb89bebbca0a16ada8a21a549258580b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd1c8d8f420919f8fabc8e4a9835acba53736a69")]
 [assembly: System.Reflection.AssemblyProductAttribute("UniformProjectOmar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UniformProjectOmar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
