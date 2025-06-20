@@ -13,26 +13,55 @@
                 <div class="modal-body">
                     <EditForm Model="@Movimiento" OnValidSubmit="OnSaveClicked">
                         <DataAnnotationsValidator />
-                        <ValidationSummary />
 
                         <div class="mb-3">
-                            <label>Empleado</label>
-                            <InputNumber class="form-control" @bind-Value="Movimiento.IdEmpleado" />
+                            <label>Emlpeado</label>
+                            <InputSelect class="form-control" @bind-Value="Movimiento.IdEmpleado">
+                                <option value="0">-- Seleccione --</option>
+                                @if (Empleados != null)
+                                {
+                                    foreach (var empleado in Empleados)
+                                    {
+                                        <option value="@empleado.Id">@empleado.NombreEmpleado</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="() => Movimiento.IdEmpleado" />
                         </div>
 
                         <div class="mb-3">
                             <label>Artículo</label>
-                            <InputNumber class="form-control" @bind-Value="Movimiento.IdArticulo" />
+                            <InputSelect class="form-control" @bind-Value="Movimiento.IdArticulo">
+                                <option value="0">-- Seleccione --</option>
+                                @if (Articulos != null)
+                                {
+                                    foreach (var articulo in Articulos)
+                                    {
+                                        <option value="@articulo.Id">@articulo.Descripcion</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="() => Movimiento.IdArticulo" />
                         </div>
 
                         <div class="mb-3">
                             <label>Talla</label>
-                            <InputText class="form-control" @bind-Value="Movimiento.Talla" />
+                            <InputSelect class="form-control" @bind-Value="Movimiento.Talla">
+                                <option value="">-- Seleccione --</option>
+                                <option value="NA">No Aplica</option>
+                                <option value="XS">Extra Chica</option>
+                                <option value="S">Chica</option>
+                                <option value="M">Mediana</option>
+                                <option value="L">Grande</option>
+                                <option value="XL">Extra Grande</option>
+                            </InputSelect>
+                            <ValidationMessage For="() => Movimiento.Talla" />
                         </div>
 
                         <div class="mb-3">
                             <label>Cantidad</label>
                             <InputNumber class="form-control" @bind-Value="Movimiento.Cantidad" />
+                            <ValidationMessage For="() => Movimiento.Cantidad" />
                         </div>
 
                         <button class="btn btn-success" type="submit">Guardar</button>

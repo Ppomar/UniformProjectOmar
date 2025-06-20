@@ -1,14 +1,23 @@
-﻿namespace UniformProjectOmar.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace UniformProjectOmar.Models;
+
+public partial class Movimiento
 {
-    public class Movimiento
-    {
-        public DateTime Fecha { get; set; }
-        public string TipoMovimiento { get; set; } = default!;
-        public int Cantidad { get; set; }
-        public string Talla { get; set; } = default!;
-        public string Articulo { get; set; } = default!;
-        public string NombreEmpleado { get; set; } = default!;
-        public string Grupo { get; set; } = default!;
-        public string TipoEmpleado { get; set; } = default!;
-    }
+    public int Id { get; set; }
+
+    public int? IdArticulo { get; set; }
+
+    public string? Talla { get; set; }
+
+    public DateTime? Fecha { get; set; }
+
+    public string? TipoMovimiento { get; set; }
+
+    public int? Cantidad { get; set; }
+
+    public string? Motivo { get; set; }
+
+    public int? IdEmpleado { get; set; }
 }

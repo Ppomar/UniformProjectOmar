@@ -4,8 +4,14 @@ namespace UniformProjectOmar.Repositories.Interfaces
 {
     public interface IUniformsRepository
     {
-        public Task<List<Movimiento>> GetMovesAsync();
+        public Task<List<MovimientoVw>> GetMoves();
 
-        public Task<bool> CreateMovement(CrearMovimiento movimiento);
+        public Task<bool?> CreateMovimiento(CrearMovimiento movimiento);
+
+        public Task<Movimiento?> GetMovimientoById(int id);
+
+        public Task<bool?> UpdateMovimiento(CrearMovimiento movimiento);
+
+        public Task<bool?> DeleteMovimiento(int id);
     }
 }

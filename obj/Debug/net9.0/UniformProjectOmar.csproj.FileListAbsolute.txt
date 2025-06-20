@@ -213,4 +213,5 @@ C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\Uni
 C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\obj\Debug\net9.0\compressed\bhxi1p31qb-lqcosc9mjs.gz
 C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\obj\Debug\net9.0\compressed\m8qw9o7wzl-igpjxkqdo0.gz
 C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\obj\Debug\net9.0\compressed\bm840nek1e-rgk9d4fpk6.gz
+C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\obj\Debug\net9.0\UniformProjectOmar.sourcelink.json
 C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

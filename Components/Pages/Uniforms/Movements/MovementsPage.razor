@@ -2,7 +2,7 @@
 @using UniformProjectOmar.Components.Layout
 @using UniformProjectOmar.Components.Pages.Uniforms.Movements.Components;
 
-<h3>Uniformes</h3>
+<h3>Movimientos</h3>
 <br />
 
 <div class="col-md-4 col-sm-12">
@@ -16,12 +16,16 @@
     <LoadingOverlay />
 }
 
-<div class="col-md-12">
-    <MovementsList Movimientos="Movimientos"/>
-</div>
+
+<MovementsList    
+    Movimientos="@Movimientos"
+    OnEdit="EditMovimientoAsync"
+    OnDelete="DeleteMovimientoAsync"/>
 
 <CreateMovementModal
         IsVisible="@IsModalOpen"
         Movimiento="@NuevoMovimiento"
+        Empleados="@Empleados"
+        Articulos="@Articulos"
         OnClose="OnModalOpenClose"
         OnSave="SaveMovimientoAsync" />

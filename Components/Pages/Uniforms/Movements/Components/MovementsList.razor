@@ -1,6 +1,7 @@
 ﻿@using UniformProjectOmar.Models
 
-<table class="table table-hover" style="table-layout:fixed">
+
+<table class="table table-hover" style="table-layout:auto;">
     <thead>
         <tr>
             <th>Fecha</th>
@@ -11,13 +12,14 @@
             <th>Nombre del Empleado</th>
             <th>Grupo</th>
             <th>Tipo de Empleado</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @if (Movimientos == null || Movimientos.Count == 0)
         {
             <tr class="text-center">
-                <td colspan="8">Lista vacia</td>
+                <td colspan="9">Lista vacia</td>
             </tr>
         }
         else if (Movimientos != null && Movimientos.Count > 0)
@@ -33,13 +35,35 @@
                     <td>@movimiento.NombreEmpleado</td>
                     <td>@movimiento.Grupo</td>
                     <td>@movimiento.TipoEmpleado</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => OnDeleteClicked(movimiento.Id)"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-warning" @onclick="() => OnEditClicked(movimiento.Id)"><i class="bi bi-pencil"></i></button>
+                    </td>
                 </tr>
             }
         }
     </tbody>
 </table>
 
+
+
 @code {
     [Parameter]
-    public List<Movimiento>? Movimientos { get; set; }
+    public List<MovimientoVw>? Movimientos { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnEdit { get; set; }
+
+    private async Task OnDeleteClicked(int id)
+    {
+        await OnDelete.InvokeAsync(id);
+    }
+
+    private async Task OnEditClicked(int id)
+    {
+        await OnEdit.InvokeAsync(id);
+    }
 }

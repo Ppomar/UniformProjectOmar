@@ -7,35 +7,92 @@ namespace UniformProjectOmar.Repositories
 {
     public class UniformsRepository : IUniformsRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly AppDbContext _context;
 
-        public UniformsRepository(AppDbContext appDbContext)
+        public UniformsRepository(AppDbContext context)
         {
-            _appDbContext = appDbContext;
+            _context = context;
         }
 
-        public async Task<List<Movimiento>> GetMovesAsync()
+        public async Task<List<MovimientoVw>> GetMoves()
         {
             try
             {
-                return await _appDbContext.MovimientosEmpleado
+                return await _context.MovimientosEmpleado
                                       .OrderByDescending(m => m.Fecha)
                                       .ToListAsync();
             }
             catch (Exception)
             {
 
-                return new List<Movimiento>();
+                return new List<MovimientoVw>();
             }
             
         }
 
-        public async Task<bool> CreateMovement(CrearMovimiento movimiento) 
+        public async Task<Movimiento?> GetMovimientoById(int id)
         {
             try
             {
-                await _appDbContext.RecordDeliveryAsync(movimiento.IdEmpleado,movimiento.IdArticulo,
+                return await _context.Movimiento.FirstOrDefaultAsync(m => m.Id == id);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        public async Task<bool?> CreateMovimiento(CrearMovimiento movimiento) 
+        {
+            try
+            {
+                await _context.RecordDeliveryAsync(movimiento.IdEmpleado,movimiento.IdArticulo,
                     movimiento.Talla,movimiento.Cantidad);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public async Task<bool?> UpdateMovimiento(CrearMovimiento movimiento)
+        {
+            try
+            {
+                var existingMovimiento = await _context.Movimiento.FirstOrDefaultAsync(m => m.Id == movimiento.Id);
+
+                if(existingMovimiento == null) return null;
+                
+                existingMovimiento.IdEmpleado = movimiento.IdEmpleado;
+                existingMovimiento.IdArticulo = movimiento.IdArticulo;
+                existingMovimiento.Talla = movimiento.Talla;
+
+                _context.Update(existingMovimiento);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public async Task<bool?> DeleteMovimiento(int id)
+        {
+            try
+            {
+                var existingMovimiento = await _context.Movimiento.FirstOrDefaultAsync(m => m.Id == id);
+
+                if (existingMovimiento == null) return null;
+
+                _context.Movimiento.Remove(existingMovimiento);
+                await _context.SaveChangesAsync();
 
                 return true;
             }
@@ -44,6 +101,6 @@ namespace UniformProjectOmar.Repositories
 
                 return false;
             }
-        }        
+        }
     }
 }

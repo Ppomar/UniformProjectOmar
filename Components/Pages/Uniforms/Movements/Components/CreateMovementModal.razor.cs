@@ -17,6 +17,12 @@ namespace UniformProjectOmar.Components.Pages.Uniforms.Movements.Components
         [Parameter]
         public CrearMovimiento Movimiento { get; set; } = new();
 
+        [Parameter]
+        public List<Empleado>? Empleados { get; set; }
+
+        [Parameter]
+        public List<Articulo>? Articulos { get; set; }
+
         private async Task OnCloseClicked()
         {
             await OnClose.InvokeAsync();

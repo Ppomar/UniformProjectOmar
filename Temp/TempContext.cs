@@ -12,57 +12,25 @@ public partial class TempContext : DbContext
     {
     }
 
-    public virtual DbSet<Empleado> Empleado { get; set; }
-
-    public virtual DbSet<Grupo> Grupo { get; set; }
-
-    public virtual DbSet<TipoEmpleado> TipoEmpleado { get; set; }
+    public virtual DbSet<Movimiento> Movimiento { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Empleado>(entity =>
+        modelBuilder.Entity<Movimiento>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Empleado__3214EC0796C5D086");
+            entity.HasKey(e => e.Id).HasName("PK__Movimien__3214EC0760092683");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.IdGrupo)
-                .HasMaxLength(1)
-                .IsUnicode(false)
-                .IsFixedLength();
-            entity.Property(e => e.NombreEmpleado)
+            entity.Property(e => e.Fecha)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Motivo)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-
-            entity.HasOne(d => d.Grupo).WithMany(p => p.Empleado)
-                .HasForeignKey(d => d.IdGrupo)
-                .HasConstraintName("FK__Empleado__IdGrup__2DE6D218");
-        });
-
-        modelBuilder.Entity<Grupo>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Grupo__3214EC07CABEA5CF");
-
-            entity.Property(e => e.Id)
-                .HasMaxLength(1)
-                .IsUnicode(false)
-                .IsFixedLength();
-            entity.Property(e => e.Grupo1)
-                .HasMaxLength(100)
-                .IsUnicode(false)
-                .HasColumnName("Grupo");
-
-            entity.HasOne(d => d.IdTipoEmpleadoNavigation).WithMany(p => p.Grupo)
-                .HasForeignKey(d => d.IdTipoEmpleado)
-                .HasConstraintName("FK__Grupo__IdTipoEmp__2B0A656D");
-        });
-
-        modelBuilder.Entity<TipoEmpleado>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__TipoEmpl__3214EC07080EED38");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Tipo)
-                .HasMaxLength(50)
+            entity.Property(e => e.Talla)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.TipoMovimiento)
+                .HasMaxLength(10)
                 .IsUnicode(false);
         });
 

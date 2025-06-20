@@ -17,13 +17,15 @@ public partial class AppDbContext : DbContext
 
     public DbSet<TipoArticulo> TipoArticulo { get; set; }
 
-    public DbSet<Movimiento> MovimientosEmpleado { get; set; }
+    public DbSet<MovimientoVw> MovimientosEmpleado { get; set; }
 
     public virtual DbSet<Empleado> Empleado { get; set; }
 
     public virtual DbSet<Grupo> Grupo { get; set; }
 
-    public virtual DbSet<TipoEmpleado> TipoEmpleado { get; set; }  
+    public virtual DbSet<TipoEmpleado> TipoEmpleado { get; set; }
+
+    public virtual DbSet<Movimiento> Movimiento { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -61,7 +63,7 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false);
         });             
 
-        modelBuilder.Entity<Movimiento>(entity =>
+        modelBuilder.Entity<MovimientoVw>(entity =>
         {
             entity.HasNoKey(); // Es una vista
             entity.ToView("vw_MovimientosEmpleado");
@@ -113,6 +115,24 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Movimiento>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Movimien__3214EC0760092683");
+
+            entity.Property(e => e.Fecha)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Motivo)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Talla)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.TipoMovimiento)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+        });
+
         base.OnModelCreating(modelBuilder);
 
         OnModelCreatingPartial(modelBuilder);
@@ -124,12 +144,12 @@ public partial class AppDbContext : DbContext
     {
         var parameters = new[]
         {
-        new SqlParameter("@Id_Empleado", idEmpleado),
-        new SqlParameter("@Id_Articulo", idArticulo),
-        new SqlParameter("@Talla", talla),
-        new SqlParameter("@Cantidad", cantidad),
-    };
+            new SqlParameter("@Id_Empleado", idEmpleado),
+            new SqlParameter("@Id_Articulo", idArticulo),
+            new SqlParameter("@Talla", talla),
+            new SqlParameter("@Cantidad", cantidad),
+        };
 
-        await Database.ExecuteSqlRawAsync("EXEC sp_RegistrarEntrega @Id_Empleado, @Id_Articulo, @Talla, @Cantidad", parameters);
+        await Database.ExecuteSqlRawAsync("EXEC SP_MOVIMIENTOS_REGISTRAR_ENTREGA @Id_Empleado, @Id_Articulo, @Talla, @Cantidad", parameters);
     }
 }
