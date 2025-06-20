@@ -1,0 +1,21 @@
+﻿@page "/employees/employee-types"
+@using UniformProjectOmar.Components.Pages.Employees.EmployeeTypes.Components
+
+<h3>Tipos de Empleado</h3>
+
+<div class="col-md-4 col-sm-12">
+    <button class="btn btn-primary mb-3" @onclick="OnTipoEmpleadoOpenClose">
+        Registrar nuevo Tipo de Empleado
+    </button>
+</div>
+
+<TipoEmpleadosList
+    TipoEmpleados="TipoEmpleados"
+    OnEdit="EditTipoEmpleadoAsync"
+    OnDelete="DeleteTipoEmpleadoAsync"/>
+
+<CreateTipoEmpleadoModal
+    IsVisible="@IsTipoEmpleadoModalOpen"
+    TipoEmpleado="@TipoEmpleado"
+    OnClose="OnTipoEmpleadoOpenClose"
+    OnSave="SaveTipoEmpleadoAsync"/>

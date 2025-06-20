@@ -1,0 +1,50 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Caso Práctico Proyecto Uniformes</h1>
+<br />
+<h2>Por Omar Quijano</h2>
+<br />
+<p>
+    El área de Recursos Humanos de la compañía está solicitando el desarrollo de una aplicación que les
+    permita llevar el control de los uniformes de los empleados con el fin de evitar el descontrol y la merma
+    que se presenta actualmente y tener un conocimiento más exacto de los inventarios y cuando es necesario
+    solicitar a los proveedores una orden de surtimiento.
+    Los empleados de la empresa están asociados a una clave personal, todos los empleados dependiendo de
+    la labor que desempeñan pertenecen a un grupo en particular
+    Los trabajadores se subdividen a la vez en trabajadores Sindicalizados y de Confianza, el único grupo que
+    corresponde a los trabajadores de confianza es el “Z” que corresponde a trabajadores “Administrativos”,
+    es decir, personal que labora en oficina, el resto de los trabajadores agrupados en los grupos A,B,C,D y E
+    pertenecen al tipo de trabajadores “Sindicalizados” y se refiere a los trabajadores que realizan trabajo de
+    campo en las instalaciones del puerto y que, por la naturaleza de su trabajo, requieren de equipo de
+    protección personal para protegerse de lesiones y accidentes
+    Los trabajadores Administrativos reciben prendas con el logo de la compañía como pueden ser Camisas,
+    Chamarras o pantalones.
+    Los trabajadores Sindicalizados reciben Equipo de protección mas especializado y que es obligatorio para
+    desempeñar su labor, como pueden ser cascos, botas de casquillo, guantes y overoles.
+    Los trabajadores sindicalizados no pueden recibir artículos del personal administrativo y viceversa, no
+    obstante, algunos artículos como los chalecos reflejantes se entregan a todo tipo de personal
+    Los artículos están diferenciados por talla de acuerdo con cómo los maneje el proveedor oficial y pueden
+    venir en notación mexicana o americana, europea, algunos artículos como el casco son unitalla.
+    El almacén debe tener siempre un stock limite de cada uno de los artículos por talla, dado que hay tallas
+    más solicitadas que otras y que el desgaste de algunos artículos es considerablemente mayor que otros
+    el stock mínimo de los artículos varía según tipo de articulo y talla.
+    Las entradas al almacén pueden ser por ingresos por orden de compra, por ajuste de reconteo, por
+    devolución si un trabajador regresa el articulo que no corresponde a su talla
+    Las salidas de almacén son básicamente entrega de artículos a los trabajadores (para este ejercicio no se
+    considera ninguna regla de negocio de limitaciones en las entregas).
+    Considerando lo anterior se solicita:
+    Crear una base datos en SQL Server, (de preferencia entregar el archivo de respaldo y que contenga el
+    diagrama E/R) y que considere tablas para los siguientes procesos.
+    Listado completo de artículos.
+    Disponibilidad de artículos en el almacén.
+    Movimientos en el almacén por entrada o salida de artículos.
+    En los catálogos debe estar bien identificado el tipo de articulo para garantizar que no se entreguen
+    artículos que no le corresponden a un trabajador.
+    Llenar las tablas de catálogos con algunos datos.
+    Crear un stored procedure que registre una baja en el inventario por entrega a un trabajador.
+    Crear una vista que permita visualizar los movimientos en el almacén y a que trabajadores se hicieron.
+    Crear una aplicación en Blazor usando el modelo que más te convenga (WebAssembly, Server o Hibrido),
+    y que realice un proceso a la base de datos, puede ser agregar datos a un catálogo o una consulta.
+</p>

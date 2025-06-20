@@ -1,0 +1,37 @@
+﻿@if (IsVisible)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color:rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrar un Articulo</h5>
+                    <button type="button" class="btn-close" @onclick="OnCloseClicked"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@TipoEmpleado" OnValidSubmit="OnSaveClicked">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label>Descripción del Tipo</label>
+                            <InputText class="form-control"
+                                       @bind-Value="TipoEmpleado.Tipo"
+                                       @oninput="ConvertirAMayusculas" />
+                            <ValidationMessage For="() => TipoEmpleado.Tipo"></ValidationMessage>
+                        </div>                        
+
+                        <button class="btn btn-success" type="submit">Guardar</button>
+                        <button class="btn btn-secondary ms-2" type="button" @onclick="OnCloseClicked">Cancelar</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @code {
+        private void ConvertirAMayusculas(ChangeEventArgs e)
+        {
+            var input = e.Value?.ToString()?.ToUpperInvariant();
+            TipoEmpleado.Tipo = input ?? string.Empty;
+        }
+    }
+}

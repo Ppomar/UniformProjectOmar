@@ -1,0 +1,45 @@
+﻿@using UniformProjectOmar.Models
+
+<table class="table table-hover" style="table-layout:fixed">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Tipo de Movimiento</th>
+            <th>Cantidad</th>
+            <th>Talla</th>
+            <th>Artículo</th>
+            <th>Nombre del Empleado</th>
+            <th>Grupo</th>
+            <th>Tipo de Empleado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Movimientos == null || Movimientos.Count == 0)
+        {
+            <tr class="text-center">
+                <td colspan="8">Lista vacia</td>
+            </tr>
+        }
+        else if (Movimientos != null && Movimientos.Count > 0)
+        {
+            foreach (var movimiento in Movimientos)
+            {
+                <tr>
+                    <td>@movimiento.Fecha</td>
+                    <td>@movimiento.TipoMovimiento</td>
+                    <td>@movimiento.Cantidad</td>
+                    <td>@movimiento.Talla</td>
+                    <td>@movimiento.Articulo</td>
+                    <td>@movimiento.NombreEmpleado</td>
+                    <td>@movimiento.Grupo</td>
+                    <td>@movimiento.TipoEmpleado</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<Movimiento>? Movimientos { get; set; }
+}

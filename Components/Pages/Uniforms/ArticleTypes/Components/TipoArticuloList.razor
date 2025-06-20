@@ -1,0 +1,55 @@
+﻿@using UniformProjectOmar.Models
+@using UniformProjectOmar.Repositories.Interfaces
+
+<table class="table table-hover" style="table-layout:fixed">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Tipo de Movimiento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (TipoArticulos == null || TipoArticulos.Count == 0)
+        {
+            <tr class="text-center">
+                <td colspan="3">Lista vacia</td>
+            </tr>
+        }
+        else if (TipoArticulos != null && TipoArticulos.Count > 0)
+        {
+            foreach (var tipoArticulo in TipoArticulos)
+            {
+                <tr>
+                    <td>@tipoArticulo.Descripcion</td>
+                    <td>@tipoArticulo.Aplicacion</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => OnDeleteClicked(tipoArticulo.Id)"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-warning" @onclick="() => OnEditClicked(tipoArticulo.Id)"><i class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<TipoArticulo>? TipoArticulos { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnEdit { get; set; }
+
+    private async Task OnDeleteClicked(int id)
+    {
+        await OnDelete.InvokeAsync(id);
+    }
+
+    private async Task OnEditClicked(int id)
+    {
+        await OnEdit.InvokeAsync(id);
+    }
+}

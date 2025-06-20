@@ -1,0 +1,58 @@
+﻿@using UniformProjectOmar.Models
+
+<table class="table table-hover" style="table-layout:fixed">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Tipo de Empleado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Grupos == null || Grupos.Count == 0)
+        {
+            <tr class="text-center">
+                <td colspan="4">Lista vacia</td>
+            </tr>
+        }
+        else if (Grupos != null && Grupos.Count > 0)
+        {
+            foreach (var grupo in Grupos)
+            {
+                <tr>
+                    <td>@grupo.Id</td>
+                    <td>@grupo.Grupo1</td>
+                    <td>
+                        @grupo.IdTipoEmpleadoNavigation?.Tipo
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => OnDeleteClicked(grupo.Id)"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-warning" @onclick="() => OnEditClicked(grupo.Id)"><i class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<Grupo>? Grupos { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnEdit { get; set; }
+
+    private async Task OnDeleteClicked(string id)
+    {
+        await OnDelete.InvokeAsync(id);
+    }
+
+    private async Task OnEditClicked(string id)
+    {
+        await OnEdit.InvokeAsync(id);
+    }
+}

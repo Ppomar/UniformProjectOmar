@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = UniformProjectOmar
+build_property.RootNamespace = UniformProjectOmar
+build_property.ProjectDir = C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\kyo2_\OneDrive\Escritorio\Projects\Net\01-BLAZOR\UniformProjectOmar\UniformProjectOmar
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Layout/LoadingOverlay.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTG9hZGluZ092ZXJsYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/EmployeeTypes/Components/CreateTipoEmpleadoModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZWVUeXBlc1xDb21wb25lbnRzXENyZWF0ZVRpcG9FbXBsZWFkb01vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/EmployeeTypes/Components/TipoEmpleadosList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZWVUeXBlc1xDb21wb25lbnRzXFRpcG9FbXBsZWFkb3NMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/EmployeeTypes/EmployeeTypesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZWVUeXBlc1xFbXBsb3llZVR5cGVzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Employess/Components/CreateEmpleadoModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZXNzXENvbXBvbmVudHNcQ3JlYXRlRW1wbGVhZG9Nb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Employess/Components/EmpleadosList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZXNzXENvbXBvbmVudHNcRW1wbGVhZG9zTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Employess/EmployeesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcRW1wbG95ZXNzXEVtcGxveWVlc1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Groups/Components/CreateGrupoModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcR3JvdXBzXENvbXBvbmVudHNcQ3JlYXRlR3J1cG9Nb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Groups/Components/GruposList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcR3JvdXBzXENvbXBvbmVudHNcR3J1cG9zTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Employees/Groups/GroupsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXNcR3JvdXBzXEdyb3Vwc1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Articles/ArticlesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlc1xBcnRpY2xlc1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Articles/Components/ArticulosList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlc1xDb21wb25lbnRzXEFydGljdWxvc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Articles/Components/CreateArticuloModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlc1xDb21wb25lbnRzXENyZWF0ZUFydGljdWxvTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/ArticleTypes/ArticleTypesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlVHlwZXNcQXJ0aWNsZVR5cGVzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/ArticleTypes/Components/CreateTipoArticuloModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlVHlwZXNcQ29tcG9uZW50c1xDcmVhdGVUaXBvQXJ0aWN1bG9Nb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/ArticleTypes/Components/TipoArticuloList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xBcnRpY2xlVHlwZXNcQ29tcG9uZW50c1xUaXBvQXJ0aWN1bG9MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Movements/Components/CreateMovementModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xNb3ZlbWVudHNcQ29tcG9uZW50c1xDcmVhdGVNb3ZlbWVudE1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Movements/Components/MovementsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xNb3ZlbWVudHNcQ29tcG9uZW50c1xNb3ZlbWVudHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Pages/Uniforms/Movements/MovementsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVbmlmb3Jtc1xNb3ZlbWVudHNcTW92ZW1lbnRzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-t1qb127yem
+
+[C:/Users/kyo2_/OneDrive/Escritorio/Projects/Net/01-BLAZOR/UniformProjectOmar/UniformProjectOmar/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-m6s9plfidq

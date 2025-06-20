@@ -1,0 +1,28 @@
+﻿@page "/employees/employees"
+@using UniformProjectOmar.Components.Layout
+@using UniformProjectOmar.Components.Pages.Employees.Employess.Components
+
+<h3>Empleados</h3>
+
+<div class="col-md-4 col-sm-12">
+    <button class="btn btn-primary mb-3" @onclick="OnEmpleadoModalOpenClose">
+        Registrar nuevo Empleado
+    </button>    
+</div>
+
+@if (Empleados == null)
+{
+    <LoadingOverlay />
+}
+
+<EmpleadosList 
+    Empleados="@Empleados"    
+    OnEdit="EditEmpleadoAsync"
+    OnDelete="DeleteEmpleadoAsync"/>
+
+<CreateEmpleadoModal
+    IsVisible="@IsEmpleadoModalOpen"
+    Grupos="@Grupos"
+    Empleado="@Empleado"    
+    OnClose="OnEmpleadoModalOpenClose"
+    OnSave="SaveEmpleadoAsync"/>

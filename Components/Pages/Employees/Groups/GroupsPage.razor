@@ -1,0 +1,28 @@
+﻿@page "/employees/groups"
+@using UniformProjectOmar.Components.Layout
+@using UniformProjectOmar.Components.Pages.Employees.Groups.Components
+
+<h3>Grupos</h3>
+
+<div class="col-md-4 col-sm-12">
+    <button class="btn btn-primary mb-3" @onclick="OnGrupoModalOpenClose">
+        Registrar nuevo Grupo
+    </button>    
+</div>
+
+@if (Grupos == null)
+{
+    <LoadingOverlay />
+}
+
+<GruposList 
+    Grupos="@Grupos"
+    OnEdit="EditArticuloAsync"
+    OnDelete="DeleteGrupoAsync"/>
+
+<CreateGrupoModal 
+    Grupo="@Grupo"
+    TipoEmpleados="@TipoEmpleados"
+    IsVisible="@IsGrupoModalOpen"
+    OnClose="OnGrupoModalOpenClose"
+    OnSave="SaveGrupoAsync"/>

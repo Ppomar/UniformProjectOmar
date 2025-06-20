@@ -1,0 +1,66 @@
+﻿@if (IsVisible)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color:rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrar un Articulo</h5>
+                    <button type="button" class="btn-close" @onclick="OnCloseClicked"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@Grupo" OnValidSubmit="OnSaveClicked">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label>Codigo</label>
+                            <InputText class="form-control" 
+                                @bind-Value="Grupo.Id"
+                                @oninput="ConvertirIdAMayusculas" />
+                            <ValidationMessage For="() => Grupo.Id"></ValidationMessage>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Descripción</label>
+                            <InputText class="form-control" 
+                                @bind-Value="Grupo.Grupo1"
+                                @oninput="ConvertirDescripcionAMayusculas"/>
+                            <ValidationMessage For="() => Grupo.Grupo1"></ValidationMessage>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Tipo de Emlpeado</label>
+                            <InputSelect class="form-control" @bind-Value="Grupo.IdTipoEmpleado">
+                                <option value="">-- Seleccione --</option>
+                                @if (TipoEmpleados != null)
+                                {
+                                    foreach (var tipoEmpleado in TipoEmpleados)
+                                    {
+                                        <option value="@tipoEmpleado.Id">@tipoEmpleado.Tipo</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="() => Grupo.IdTipoEmpleado" />
+                        </div>
+
+                        <button class="btn btn-success" type="submit">Guardar</button>
+                        <button class="btn btn-secondary ms-2" type="button" @onclick="OnCloseClicked">Cancelar</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @code {
+        private void ConvertirIdAMayusculas(ChangeEventArgs e)
+        {
+            var input = e.Value?.ToString()?.ToUpperInvariant();
+            Grupo.Id = input ?? string.Empty;
+        }
+
+    private void ConvertirDescripcionAMayusculas(ChangeEventArgs e)
+    {
+        var input = e.Value?.ToString()?.ToUpperInvariant();
+        Grupo.Grupo1 = input ?? string.Empty;
+    }
+    }
+}

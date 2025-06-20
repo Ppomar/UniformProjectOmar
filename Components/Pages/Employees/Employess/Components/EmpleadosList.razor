@@ -1,0 +1,54 @@
+﻿@using UniformProjectOmar.Models
+
+<table class="table table-hover" style="table-layout:fixed">
+    <thead>
+        <tr>           
+            <th>Nombre del Empleado</th>
+            <th>Grupo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Empleados == null || Empleados.Count == 0)
+        {
+            <tr class="text-center">
+                <td colspan="3">Lista vacia</td>
+            </tr>
+        }
+        else if (Empleados != null && Empleados.Count > 0)
+        {
+            foreach (var empleado in Empleados)
+            {
+                <tr>
+                    <td>@empleado.NombreEmpleado</td>
+                    <td>@empleado.Grupo?.Grupo1</td>                    
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => OnDeleteClicked(empleado.Id)"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-warning" @onclick="() => OnEditClicked(empleado.Id)"><i class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<Empleado>? Empleados { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnEdit { get; set; }
+
+    private async Task OnDeleteClicked(int id)
+    {
+        await OnDelete.InvokeAsync(id);
+    }
+
+    private async Task OnEditClicked(int id)
+    {        
+        await OnEdit.InvokeAsync(id);
+    }
+}

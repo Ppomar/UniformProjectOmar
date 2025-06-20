@@ -1,0 +1,38 @@
+﻿@page "/uniforms/articles"
+@using UniformProjectOmar.Components.Layout
+@using UniformProjectOmar.Components.Pages.Uniforms.ArticleTypes.Components
+@using UniformProjectOmar.Components.Pages.Uniforms.Articles.Components
+
+<h3>Articulos</h3>
+
+<div class="col-md-4 col-sm-12">
+    <button class="btn btn-primary mb-3" @onclick="OnArticuloModalOpenClose">
+        Registrar nuevo Articulo
+    </button>
+
+    <button class="btn btn-warning mb-3" @onclick="OnTipoArticuloModalOpenClose">
+        Registrar nuevo tipo de Articulo
+    </button>
+</div>
+
+@if (Articulos == null)
+{
+    <LoadingOverlay />
+}
+
+<ArticulosList 
+    Articulos="Articulos" 
+    OnDelete="DeleteArticulo"
+    OnEdit="EditArticuloAsync"/>
+
+<CreateArticuloModal 
+    IsVisible="@IsArticuloModalOpen"
+    OnClose="OnArticuloModalOpenClose"
+    TipoArticulos="@TipoArticulos"
+    OnSave="SaveArticuloAsync"
+    Articulo="Articulo"/>
+
+<CreateTipoArticuloModal
+        IsVisible="@IsTipoArticuloModalOpen"
+        OnClose="OnTipoArticuloModalOpenClose"
+        OnSave="SaveTipoArticuloAsync" />
